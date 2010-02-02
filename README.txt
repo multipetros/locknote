@@ -4,6 +4,7 @@ Copyright (C) 2006 Steganos GmbH
 Build Notes
 -----------
 Written by Leonard Ritter, 2006/03/06
+Amended by Robert Foertsch, 2010/02/02
 
 At the time of release, LockNote builds with Microsoft Visual Studio .NET 2003
 only, but it is not impossible that it builds with other compilers/IDE's as
@@ -30,6 +31,10 @@ the CryptoPP library.
 
 History
 -------
+
+* 1.0.4, 2007/04/05:
+	- NEW: Added dutch translation
+	- FIX: Path fix for cryptopp.lib in project
 
 * 1.0.3, 2006/03/06:
 	- NEW: Added spanish translation (Castilian)
