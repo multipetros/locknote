@@ -174,6 +174,18 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 	wndMain.m_password = password;
 	wndMain.m_text = text;
 
+	// get window sizes from resource
+	std::string sizeinfo;
+	Utils::LoadResource(_T("INFORMATION"), _T("SIZE"), sizeinfo);
+	if (_tcslen(sizeinfo.c_str()))
+	{
+		// sizeinfo format: x:500|y:400
+		std::string strX = sizeinfo.substr(0, sizeinfo.find('|'));
+		std::string strY = sizeinfo.substr(sizeinfo.find('|') + 1, -1);
+		wndMain.m_nWindowSizeX = atoi(strX.substr(2, -1).c_str());
+		wndMain.m_nWindowSizeY = atoi(strY.substr(2, -1).c_str());
+	}
+	
 	if(wndMain.CreateEx() == NULL)
 	{
 		ATLTRACE(_T("Main window creation failed!\n"));
@@ -212,7 +224,14 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 
 		::CopyFile(szModulePath, szFileName, FALSE);
 		Utils::UpdateResource(szFileName, _T("CONTENT"), _T("PAYLOAD"), data);
-
+		
+		// write window sizes to resource
+		std::string sizeinfo;
+		char szSizeInfo[MAX_PATH] = "";
+		sprintf(szSizeInfo, "x:%d|y:%d", wndMain.m_nWindowSizeX, wndMain.m_nWindowSizeY);
+		sizeinfo = szSizeInfo;
+		Utils::UpdateResource(szFileName, _T("INFORMATION"), _T("SIZE"), sizeinfo);
+		
 		_tspawnl(_P_NOWAIT, szFileName, Utils::Quote(szFileName).c_str(), _T("-writeback"), Utils::Quote(szModulePath).c_str(), NULL);
 	}
 
