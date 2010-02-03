@@ -1,5 +1,5 @@
 // Steganos LockNote - self-modifying encrypted notepad
-// Copyright (C) 2006 Steganos GmbH
+// Copyright (C) 2006-2010 Steganos GmbH
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by

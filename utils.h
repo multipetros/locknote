@@ -1,5 +1,5 @@
 // Steganos LockNote - self-modifying encrypted notepad
-// Copyright (C) 2006 Steganos GmbH
+// Copyright (C) 2006-2010 Steganos GmbH
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -28,24 +28,19 @@ std::string GetNewPasswordDlg(HWND hWnd = NULL);
 
 namespace Utils
 {
-
 	using namespace CryptoPP;
-	
-
-
-
 
 	HMODULE GetModuleHandle(void)
 	{
-	#if _MSC_VER < 1300 // earlier than .NET compiler (VC 6.0)
+#if _MSC_VER < 1300 // earlier than .NET compiler (VC 6.0)
 		MEMORY_BASIC_INFORMATION mbi;
 		static int dummy;
 		VirtualQuery( &dummy, &mbi, sizeof(mbi) );
 
 		return reinterpret_cast<HMODULE>(mbi.AllocationBase);
-	#else // VC 7.0
+#else // VC 7.0
 		return reinterpret_cast<HMODULE>(&__ImageBase);
-	#endif
+#endif
 	}
 
 	std::string STR(UINT nResourceID)
@@ -122,9 +117,6 @@ namespace Utils
 		return bResult;
 	}
 
-
-	
-
 	bool EncryptString(const std::string& strText, const std::string& strPassword, std::string& strEncryptedData)
 	{
 		RandomPool randPool;
@@ -163,9 +155,7 @@ namespace Utils
 		else 
 		{
 			return false;
-		}
-
-		
+		}	
 	}
 
 	std::string Quote(const std::string& strText)
@@ -245,7 +235,6 @@ namespace Utils
 		::CopyFile(szModulePath, filepath.c_str(), FALSE);	
 		return Utils::UpdateResource(filepath.c_str(), _T("CONTENT"), _T("PAYLOAD"), data);
 	}
-
 }
 
 using namespace Utils;

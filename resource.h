@@ -35,6 +35,12 @@
 #define ID_Menu                         32778
 #define ID_EDIT_FINDNEXT                32780
 
+#define ID_VIEW_FONTSIZE                32781
+#define ID_VIEW_FONTSIZE_9              32782
+#define ID_VIEW_FONTSIZE_10             32783
+#define ID_VIEW_FONTSIZE_12             32784
+#define ID_VIEW_FONTSIZE_14             32785
+
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED

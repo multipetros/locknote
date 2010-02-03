@@ -1,5 +1,5 @@
 // Steganos LockNote - self-modifying encrypted notepad
-// Copyright (C) 2006 Steganos GmbH
+// Copyright (C) 2006-2010 Steganos GmbH
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -185,12 +185,26 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 		wndMain.m_nWindowSizeX = atoi(strX.substr(2, -1).c_str());
 		wndMain.m_nWindowSizeY = atoi(strY.substr(2, -1).c_str());
 	}
+
+	// get font size
+	std::string fontsize;
+	Utils::LoadResource(_T("INFORMATION"), _T("FONTSIZE"), fontsize);
+	if (_tcslen(fontsize.c_str()))
+	{
+		// fontsize format: 10
+		wndMain.m_nFontSize = atoi(fontsize.c_str());
+	}
+	else
+	{
+		wndMain.m_nFontSize = 10;
+	}
 	
 	if(wndMain.CreateEx() == NULL)
 	{
 		ATLTRACE(_T("Main window creation failed!\n"));
 		return 0;
 	}
+	wndMain.CheckFontSize();
 
 	*fmSingleInstanceHWND = wndMain.m_hWnd;
 
@@ -224,14 +238,21 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 
 		::CopyFile(szModulePath, szFileName, FALSE);
 		Utils::UpdateResource(szFileName, _T("CONTENT"), _T("PAYLOAD"), data);
-		
+
 		// write window sizes to resource
 		std::string sizeinfo;
 		char szSizeInfo[MAX_PATH] = "";
 		sprintf(szSizeInfo, "x:%d|y:%d", wndMain.m_nWindowSizeX, wndMain.m_nWindowSizeY);
 		sizeinfo = szSizeInfo;
 		Utils::UpdateResource(szFileName, _T("INFORMATION"), _T("SIZE"), sizeinfo);
-		
+	
+		// write font size
+		std::string fontsize;
+		char szFontSize[MAX_PATH] = "";
+		sprintf(szFontSize, "%d", wndMain.m_nFontSize);
+		fontsize = szFontSize;
+		Utils::UpdateResource(szFileName, _T("INFORMATION"), _T("FONTSIZE"), fontsize);
+
 		_tspawnl(_P_NOWAIT, szFileName, Utils::Quote(szFileName).c_str(), _T("-writeback"), Utils::Quote(szModulePath).c_str(), NULL);
 	}
 

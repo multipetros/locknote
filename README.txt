@@ -1,10 +1,10 @@
 Steganos LockNote - Self-modifying encrypted notepad
-Copyright (C) 2006 Steganos GmbH
+Copyright (C) 2006-2010 Steganos GmbH
 
 Build Notes
 -----------
 Written by Leonard Ritter, 2006/03/06
-Amended by Robert Foertsch, 2010/02/02
+Amended by Robert Foertsch, 2010/02/03
 
 At the time of release, LockNote builds with Microsoft Visual Studio .NET 2003
 only, but it is not impossible that it builds with other compilers/IDE's as
@@ -32,15 +32,24 @@ the CryptoPP library.
 History
 -------
 
+* 1.0.5, 2010/02/03:
+	- FIX: Find Dialog, Enter/Tab/Escape/Space/Ctrl-V keys work
+	- FIX: Find Dialog, Message displayed if search string is not found
+	- NEW: Message displayed if search string is not found
+	- NEW: LockNote remembers window size if there are saved changes
+	- NEW: Changed default font to Lucida Console to avoid 1/l - O/0 confusion
+	- NEW: Font size can be selected (9/10/12/14)
+	- NEW: LockNote remembers font size if there are saved changes
+	
 * 1.0.4, 2007/04/05:
-	- NEW: Added dutch translation
+	- NEW: Added Dutch translation
 	- FIX: Path fix for cryptopp.lib in project
 
 * 1.0.3, 2006/03/06:
-	- NEW: Added spanish translation (Castilian)
+	- NEW: Added Spanish translation (Castilian)
 
 * 1.0.2, 2006/02/14:
-	- NEW: Added french translation
+	- NEW: Added French translation
 	- NEW: Added 'Save As...' option
 
 * 1.0.1, 2006/01/16:

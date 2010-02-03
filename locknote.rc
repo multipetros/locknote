@@ -161,6 +161,16 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "Alles &markieren\tStrg+A",    ID_EDIT_SELECT_ALL
     END
+	POPUP "&Ansicht"
+    BEGIN
+        POPUP "&Schriftgröße"
+		BEGIN
+			MENUITEM "9",						ID_VIEW_FONTSIZE_9
+			MENUITEM "10",						ID_VIEW_FONTSIZE_10	//CHECKED
+			MENUITEM "12",						ID_VIEW_FONTSIZE_12
+			MENUITEM "14",						ID_VIEW_FONTSIZE_14
+		END
+    END
     POPUP "&Hilfe"
     BEGIN
         MENUITEM "Über Steganos &LockNote",     ID_APP_ABOUT
@@ -185,6 +195,7 @@ BEGIN
     IDS_WELCOME             "Willkommen zu Steganos LockNote.\r\n\r\nGeben Sie einen Text ein und schließen Sie Steganos LockNote, sobald Sie fertig sind. Was Sie geschrieben haben, wird mit einem Passwort, das Sie wählen, verschlüsselt.\r\n\r\nSie können auch Text-Dokumente auf Steganos LockNote ziehen, um sie ebenfalls in verschlüsselte selbstöffnende Dokumente zu verwandeln.\r\n\r\nSie können diesen Text entfernen, um mit einem leeren Dokument zu beginnen. Durch Leeren des Textfelds kann auch das Passwort zurückgesetzt werden.\r\n\r\nMehr Tipps und Tricks gibt es auf der Steganos LockNote Website:\r\n\r\nhttp://locknote.steganos.com\r\n"
     IDS_PASSWORD            "Passwort:"
     IDS_PASSWORD_REPEAT     "Passwort-Wiederholung:"
+	IDS_FIND_NOT_FOUND		"'%s' wurde nicht gefunden."
 END
 
 STRINGTABLE 
@@ -215,11 +226,12 @@ END
 STRINGTABLE 
 BEGIN
     ID_EDIT_SELECTALL       "Wählt den gesamten Text Aus\nAlles auswählen"
+	ID_VIEW_FONTSIZE		"Schriftgröße ändern"
 END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006, 2007 Steganos GmbH.\r\n\r\nGeschrieben von:\r\nLeonard Ritter\r\nMichael Sadoni\r\n\r\nÜbersetzungen:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® ist ein eingetragenes Warenzeichen in der Europäischen Union, den Vereinigten Staaten von Amerika, der Schweiz und anderen Ländern.\r\n\r\nDieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 2 der Lizenz oder (nach Ihrer Option) jeder späteren Version.\r\n\r\nDie Veröffentlichung dieses Programms erfolgt in der Hoffnung, daß es Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. Details finden Sie in der GNU General Public License.\r\n\r\nSie sollten ein Exemplar der GNU General Public License zusammen mit diesem Programm erhalten haben. Falls nicht, schreiben Sie an die Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA."
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH.\r\n\r\nGeschrieben von:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\n\r\nÜbersetzungen:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® ist ein eingetragenes Warenzeichen in der Europäischen Union, den Vereinigten Staaten von Amerika, der Schweiz und anderen Ländern.\r\n\r\nDieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 2 der Lizenz oder (nach Ihrer Option) jeder späteren Version.\r\n\r\nDie Veröffentlichung dieses Programms erfolgt in der Hoffnung, daß es Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. Details finden Sie in der GNU General Public License.\r\n\r\nSie sollten ein Exemplar der GNU General Public License zusammen mit diesem Programm erhalten haben. Falls nicht, schreiben Sie an die Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA."
 END
 
 #endif    // German (Germany) resources
@@ -326,6 +338,16 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "Select &All\tCtrl+A",         ID_EDIT_SELECT_ALL
     END
+	POPUP "&View"
+    BEGIN
+        POPUP "&Font size"
+		BEGIN
+			MENUITEM "9",						ID_VIEW_FONTSIZE_9
+			MENUITEM "10",						ID_VIEW_FONTSIZE_10	//CHECKED
+			MENUITEM "12",						ID_VIEW_FONTSIZE_12
+			MENUITEM "14",						ID_VIEW_FONTSIZE_14
+		END
+    END
     POPUP "&Help"
     BEGIN
         MENUITEM "&About Steganos LockNote",    ID_APP_ABOUT
@@ -365,8 +387,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,4,2
- PRODUCTVERSION 1,0,4,2
+ FILEVERSION 1,0,5,0
+ PRODUCTVERSION 1,0,5,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -383,12 +405,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Steganos GmbH"
             VALUE "FileDescription", "Steganos LockNote"
-            VALUE "FileVersion", "1, 0, 4, 2"
+            VALUE "FileVersion", "1, 0, 5, 0"
             VALUE "InternalName", "LockNote"
-            VALUE "LegalCopyright", "Copyright 2006, 2007 Steganos GmbH"
+            VALUE "LegalCopyright", "Copyright 2006-2010 Steganos GmbH"
             VALUE "OriginalFilename", "locknote.exe"
             VALUE "ProductName", "Steganos LockNote"
-            VALUE "ProductVersion", "1, 0, 4, 2"
+            VALUE "ProductVersion", "1, 0, 5, 0"
         END
     END
     BLOCK "VarFileInfo"
@@ -415,6 +437,7 @@ BEGIN
     IDS_WELCOME             "Welcome to Steganos LockNote.\r\n\r\nType some text and close Steganos LockNote when you are done. What you typed will be encrypted using a password, which you supply.\r\n\r\nYou can also drop text documents on Steganos LockNote to turn them into encrypted self-opening documents as well.\r\n\r\nYou can start over by removing all text. You can also clear the text field to reset the password.\r\n\r\nGet more tips and tricks from the Steganos LockNote website:\r\n\r\nhttp://locknote.steganos.com\r\n"
     IDS_PASSWORD            "Password:"
     IDS_PASSWORD_REPEAT     "Repeat Password:"
+	IDS_FIND_NOT_FOUND		"'%s' could not be found."
 END
 
 STRINGTABLE 
@@ -449,7 +472,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006, 2007 Steganos GmbH\r\n\r\nWritten by:\r\nLeonard Ritter\r\nMichael Sadoni\r\n\r\nTranslations:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® is a registered trademark in the European Union, the United States of America, Switzerland and other countries.\r\n\r\nThis program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\r\n\r\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\r\n\r\nYou should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nWritten by:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\n\r\nTranslations:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® is a registered trademark in the European Union, the United States of America, Switzerland and other countries.\r\n\r\nThis program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\r\n\r\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\r\n\r\nYou should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 END
 
 #endif    // English (U.S.) resources
@@ -557,6 +580,16 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "Sélectionner &tout\tCtrl+A",  ID_EDIT_SELECT_ALL
     END
+	POPUP "Aff&ichage"
+    BEGIN
+        POPUP "&Taille de police"
+		BEGIN
+			MENUITEM "9",						ID_VIEW_FONTSIZE_9
+			MENUITEM "10",						ID_VIEW_FONTSIZE_10	//CHECKED
+			MENUITEM "12",						ID_VIEW_FONTSIZE_12
+			MENUITEM "14",						ID_VIEW_FONTSIZE_14
+		END
+    END
     POPUP "&Aide"
     BEGIN
         MENUITEM "&A propos de Steganos LockNote", ID_APP_ABOUT
@@ -607,6 +640,7 @@ BEGIN
     IDS_WELCOME             "Bienvenue dans Steganos LockNote.\r\n\r\nTapez ici un peu de texte et fermez Steganos LockNote quand vous avez terminé. Ce que vous avez tapé sera encrypté à l'aide d'un mot de passe, que vous fournirez.\r\n\r\nVous pouvez aussi glisser des documents sur la fenêtre de Steganos LockNote pour les convertir en documents encryptés s'ouvrant par eux-mêmes.\r\n\r\nVous pouvez commencer en remplaçant ce texte. Vous pouvez également effacer la zone de texte pour ré-initialiser le mot de passe.\r\n\r\nObtenez d'autres trucs et astuces depuis le site Internet de Steganos LockNote:\r\n\r\nhttp://locknote.steganos.com\r\n"
     IDS_PASSWORD            "Mot de passe :"
     IDS_PASSWORD_REPEAT     "Répétez le mot de passe :"
+	IDS_FIND_NOT_FOUND		"'%s' introuvable."
 END
 
 STRINGTABLE 
@@ -641,7 +675,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006, 2007 Steganos GmbH\r\n\r\nécrit par :\r\nLeonard Ritter\r\nMichael Sadoni\r\n\r\nTraductions:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® est une marque déposée dans l'Union Européenne, les Etats-Unis d'Amérique, la Suisse et autres pays.\r\n\r\nCe programme est un logiciel libre; vous pouvez le re-distribuer et/ou le modifier selon les termes de la 'General Public License' de GNU publiée par la 'Free Software Foundation'; version 2 de la licence, ou (à votre convenance) toute autre version ultérieure.\r\n\r\nCe programme est distribué avec l'espoir qu'il vous sera utile, mais SANS AUCUNE GARANTIE; également sans même la garantie implicite d'être COMMERCIALISABLE ou de correspondre à un USAGE SPECIFIQUE. Voyez la 'General Public License' de GNU pour plus de détails.\r\n\r\nVous devriez avoir reçu une copie de la 'General Public License' de GNU fournie avec ce programme; dans le cas contraire, vous pouvez écrire à : Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nécrit par :\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\n\r\nTraductions:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® est une marque déposée dans l'Union Européenne, les Etats-Unis d'Amérique, la Suisse et autres pays.\r\n\r\nCe programme est un logiciel libre; vous pouvez le re-distribuer et/ou le modifier selon les termes de la 'General Public License' de GNU publiée par la 'Free Software Foundation'; version 2 de la licence, ou (à votre convenance) toute autre version ultérieure.\r\n\r\nCe programme est distribué avec l'espoir qu'il vous sera utile, mais SANS AUCUNE GARANTIE; également sans même la garantie implicite d'être COMMERCIALISABLE ou de correspondre à un USAGE SPECIFIQUE. Voyez la 'General Public License' de GNU pour plus de détails.\r\n\r\nVous devriez avoir reçu une copie de la 'General Public License' de GNU fournie avec ce programme; dans le cas contraire, vous pouvez écrire à : Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 END
 
 #endif    // French (France) resources
@@ -749,6 +783,16 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "Seleccionar &todo\tCtrl+A",			ID_EDIT_SELECT_ALL
     END
+	POPUP "&Ver"
+    BEGIN
+        POPUP "&Tamaño de fuente"
+		BEGIN
+			MENUITEM "9",						ID_VIEW_FONTSIZE_9
+			MENUITEM "10",						ID_VIEW_FONTSIZE_10	//CHECKED
+			MENUITEM "12",						ID_VIEW_FONTSIZE_12
+			MENUITEM "14",						ID_VIEW_FONTSIZE_14
+		END
+    END
     POPUP "Ay&uda"
     BEGIN
         MENUITEM "&Acerca de Steganos LockNote",		ID_APP_ABOUT
@@ -799,6 +843,7 @@ BEGIN
     IDS_WELCOME             "Bienvenido a Steganos LockNote.\r\n\r\nEscriba el texto y cierre Steganos LockNote al finalizar. Lo que escriba se codificará con la contraseña que usted proporcione.\r\n\r\nTambién puede colocar documentos de texto en Steganos LockNote para convertirlos en documentos codificados que se abren automáticamente.\r\n\r\nPara empezar de nuevo, borre todo el texto. También puede borrar el campo de texto para restablecer la contraseña.\r\n\r\nObtenga más sugerencias en el sitio Web de Steganos LockNote:\r\n\r\nhttp://locknote.steganos.com\r\n"
     IDS_PASSWORD            "Contraseña:"
     IDS_PASSWORD_REPEAT     "Repita la contraseña:"
+	IDS_FIND_NOT_FOUND		"'%s' no pudo ser encontrado."
 END
 
 STRINGTABLE 
@@ -833,7 +878,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006, 2007 Steganos GmbH\r\n\r\nEscrito por:\r\nLeonard Ritter\r\nMichael Sadoni\r\n\r\nTraducciones:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® es una marca comercial registrada en la Unión Europea, en los Estados Unidos de América, en Suiza y en otros países.\r\n\r\nEste programa es un software gratuito; usted puede redistribuirlo y modificarlo bajo los términos de la Licencia Pública General GNU publicada por Free Software Foundation; ya sea la versión 2 de la licencia o cualquier versión posterior (a su discreción).\r\n\r\nEste programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA; no incluye ni siguiera la garantía implícita de COMERCIABILIDAD o ADECUACIÓN PARA UN FIN PARTICULAR. Consulte la Licencia Pública General GNU para obtener más detalles.\r\n\r\nDebería haber recibido una copia de la Licencia Pública General GNU junto con este programa; si no la recibió, escriba a Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nEscrito por:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\n\r\nTraducciones:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® es una marca comercial registrada en la Unión Europea, en los Estados Unidos de América, en Suiza y en otros países.\r\n\r\nEste programa es un software gratuito; usted puede redistribuirlo y modificarlo bajo los términos de la Licencia Pública General GNU publicada por Free Software Foundation; ya sea la versión 2 de la licencia o cualquier versión posterior (a su discreción).\r\n\r\nEste programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA; no incluye ni siguiera la garantía implícita de COMERCIABILIDAD o ADECUACIÓN PARA UN FIN PARTICULAR. Consulte la Licencia Pública General GNU para obtener más detalles.\r\n\r\nDebería haber recibido una copia de la Licencia Pública General GNU junto con este programa; si no la recibió, escriba a Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 END
 
 #endif    // Spanish resources
@@ -929,7 +974,7 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "Af&sluiten",							ID_APP_EXIT
     END
-    POPUP "&Bewerken"
+    POPUP "Be&werken"
     BEGIN
         MENUITEM "&Ongedaan maken\tCtrl+Z",				ID_EDIT_UNDO
         MENUITEM SEPARATOR
@@ -941,6 +986,16 @@ BEGIN
         MENUITEM "Volgende &Zoeken\tF3",				ID_EDIT_FINDNEXT
         MENUITEM SEPARATOR
         MENUITEM "Selecteer &Alles\tCtrl+A",			ID_EDIT_SELECT_ALL
+    END
+	POPUP "B&ekijken"
+    BEGIN
+        POPUP "&Lettergrootte"
+		BEGIN
+			MENUITEM "9",						ID_VIEW_FONTSIZE_9
+			MENUITEM "10",						ID_VIEW_FONTSIZE_10	//CHECKED
+			MENUITEM "12",						ID_VIEW_FONTSIZE_12
+			MENUITEM "14",						ID_VIEW_FONTSIZE_14
+		END
     END
     POPUP "&Help"
     BEGIN
@@ -992,6 +1047,7 @@ BEGIN
     IDS_WELCOME             "Welkom bij Steganos LockNote.\r\n\r\nVoer tekst in en sluit LockNote wanneer u klaar bent. Wat u typt zal worden versleuteld met een wachtwoord, wat u zelf bepaalt.\r\n\r\nU kunt ook tekstbestanden invoeren in LockNote om ze te veranderen in versleutelde zelf-openende documenten.\r\n\r\nU kunt nu beginnen door alle tekst hier te verwijderen. U kunt ook alle tekst verwijderen om het wachtwoord te resetten.\r\n\r\nMeer tips op de officiële website:\r\n\r\nhttp://locknote.steganos.com\r\n"
     IDS_PASSWORD            "Wachtwoord:"
     IDS_PASSWORD_REPEAT     "Herhaal wachtwoord:"
+	IDS_FIND_NOT_FOUND		"'%s' kon niet worden gevonden."
 END
 
 STRINGTABLE 
@@ -1026,7 +1082,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006, 2007 Steganos GmbH.\r\n\r\nGescheven door:\r\nLeonard Ritter\r\nMichael Sadoni\r\n\r\nVertalingen:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® is een geregistreerd merk in de Europese Unie, de Verenigde Staten van Amerika, Zwitserland en andere landen.\r\n\r\nDit programma is gratis software; u kunt het opnieuw uitgeven en/of het programma aanpassen onder de termen van de GNU General Public License gepubliceerd onder de Free Software Foundation; onder de tweede versie, of (uw keuze) latere versies.\r\n\r\nDit programma is uitgegeven in de hoop dat het handig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de inbegrepen garantie van MERCHANTABILITY of GESCHIKTHEID VOOR PARTICULIER GEBRUIK. Zie de GNU General Public License voor meer details.\r\n\r\nU zou een kopie van de GNU General Public License moeten hebben gekregen met dit programma; zo niet, schijf naar de Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH.\r\n\r\nGescheven door:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\n\r\nVertalingen:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® is een geregistreerd merk in de Europese Unie, de Verenigde Staten van Amerika, Zwitserland en andere landen.\r\n\r\nDit programma is gratis software; u kunt het opnieuw uitgeven en/of het programma aanpassen onder de termen van de GNU General Public License gepubliceerd onder de Free Software Foundation; onder de tweede versie, of (uw keuze) latere versies.\r\n\r\nDit programma is uitgegeven in de hoop dat het handig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de inbegrepen garantie van MERCHANTABILITY of GESCHIKTHEID VOOR PARTICULIER GEBRUIK. Zie de GNU General Public License voor meer details.\r\n\r\nU zou een kopie van de GNU General Public License moeten hebben gekregen met dit programma; zo niet, schijf naar de Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 END
 
 #endif    // Dutch resources

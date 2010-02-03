@@ -1,5 +1,5 @@
 // Steganos LockNote - self-modifying encrypted notepad
-// Copyright (C) 2006 Steganos GmbH
+// Copyright (C) 2006-2010 Steganos GmbH
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -50,16 +50,21 @@ public:
 	DWORD m_dwSearchFlags;
 	std::string m_strSearchString;
 	CFindReplaceDialog* m_pCurrentFindReplaceDialog;
-	
+
 	int m_nWindowSizeX;
 	int m_nWindowSizeY;
-	
+	int m_nFontSize;
+
+	CMenu* m_pMenu;
+
 	CMainFrame()
 	{
 		m_nWindowSizeX = 500;
 		m_nWindowSizeY = 400;
+		m_nFontSize = 10;
+		m_pMenu = NULL;
 	}
-	
+
 	virtual BOOL PreTranslateMessage(MSG* pMsg)
 	{
 		if (CFrameWindowImpl<CMainFrame>::PreTranslateMessage(pMsg))
@@ -74,7 +79,7 @@ public:
 				return TRUE;
 			}
 		}
-		
+
 		return m_view.PreTranslateMessage(pMsg);
 	}
 
@@ -101,6 +106,11 @@ public:
 		COMMAND_ID_HANDLER(ID_EDIT_UNDO, OnEditUndo)
 		COMMAND_ID_HANDLER(ID_EDIT_FIND, OnEditFind)
 		COMMAND_ID_HANDLER(ID_EDIT_FINDNEXT, OnEditFindNext)
+		COMMAND_ID_HANDLER(ID_VIEW_FONTSIZE_9, OnViewFontSize)
+		COMMAND_ID_HANDLER(ID_VIEW_FONTSIZE_10, OnViewFontSize)
+		COMMAND_ID_HANDLER(ID_VIEW_FONTSIZE_12, OnViewFontSize)
+		COMMAND_ID_HANDLER(ID_VIEW_FONTSIZE_14, OnViewFontSize)
+		
 		COMMAND_CODE_HANDLER(EN_CHANGE, OnChange)
 		CHAIN_MSG_MAP(CFrameWindowImpl<CMainFrame>)
 	END_MSG_MAP()
@@ -123,6 +133,76 @@ public:
 //	LRESULT MessageHandler(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/)
 //	LRESULT CommandHandler(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 //	LRESULT NotifyHandler(int /*idCtrl*/, LPNMHDR /*pnmh*/, BOOL& /*bHandled*/)
+
+	void CheckFontSize()
+	{
+		// check the correct menu item
+		HMENU hMenu = this->GetMenu();
+		CMenuHandle menu(hMenu);
+		menu.CheckMenuItem(ID_VIEW_FONTSIZE_9, MF_UNCHECKED);
+		menu.CheckMenuItem(ID_VIEW_FONTSIZE_10, MF_UNCHECKED);
+		menu.CheckMenuItem(ID_VIEW_FONTSIZE_12, MF_UNCHECKED);
+		menu.CheckMenuItem(ID_VIEW_FONTSIZE_14, MF_UNCHECKED);
+		switch (m_nFontSize)
+		{
+		case 9:
+			menu.CheckMenuItem(ID_VIEW_FONTSIZE_9, MF_CHECKED);
+			break;
+		case 12:
+			menu.CheckMenuItem(ID_VIEW_FONTSIZE_12, MF_CHECKED);
+			break;
+		case 14:
+			menu.CheckMenuItem(ID_VIEW_FONTSIZE_14, MF_CHECKED);
+			break;
+		case 10:
+		default:
+			menu.CheckMenuItem(ID_VIEW_FONTSIZE_10, MF_CHECKED);
+		};
+	}
+
+	LRESULT OnViewFontSize(WORD wNotifyCode, WORD wID, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
+	{
+		// get selected font size and check the correct menuitem
+		switch (wID)
+		{
+		case ID_VIEW_FONTSIZE_9:
+			m_nFontSize = 9;
+			break;
+		case ID_VIEW_FONTSIZE_12:
+			m_nFontSize = 12;
+			break;
+		case ID_VIEW_FONTSIZE_14:
+			m_nFontSize = 14;
+			break;
+		case ID_VIEW_FONTSIZE_10:
+		default:
+			m_nFontSize = 10;
+		}
+		CheckFontSize();
+
+		CClientDC dc(*this);
+		m_fontEdit.DeleteObject();
+		m_fontEdit.CreateFont(
+			-MulDiv(m_nFontSize, GetDeviceCaps(dc, LOGPIXELSY), 72),
+			0,
+			0,
+			0,
+			FW_NORMAL,
+			FALSE,
+			FALSE,
+			FALSE,
+			DEFAULT_CHARSET,
+			OUT_DEFAULT_PRECIS,
+			CLIP_DEFAULT_PRECIS,
+			DEFAULT_QUALITY,
+			DEFAULT_PITCH,
+			_LOCKNOTE_FONT);
+
+		ATLASSERT(m_fontEdit);
+		m_view.SetFont(m_fontEdit);
+		
+		return 0;
+	}
 
 	LRESULT OnDropFiles(UINT /*uMsg*/, WPARAM wParam, LPARAM /*lParam*/, BOOL& /*bHandled*/)
 	{
@@ -186,7 +266,7 @@ public:
 	LRESULT OnFileSaveAs(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 	{
 		std::string encryptPassword;
-		
+
 		CFileDialog dlg(FALSE, _T("exe"), NULL, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, NULL, *this);
 		if (dlg.DoModal() == IDOK)
 		{
@@ -236,10 +316,9 @@ public:
 		bHandled = FALSE;
 		m_text = text;
 
-
 		return FALSE;
 	}
-
+	
 	LRESULT OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 	{
 		RECT rc;
@@ -249,7 +328,7 @@ public:
 		bHandled = FALSE;
 		return 0;
 	}
-	
+
 	LRESULT OnDestroy(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& bHandled)
 	{
 		bHandled = FALSE;
@@ -270,7 +349,7 @@ public:
 
 		CClientDC dc(*this);
 		m_fontEdit.CreateFont(
-			-MulDiv(9, GetDeviceCaps(dc, LOGPIXELSY), 72),
+			-MulDiv(m_nFontSize, GetDeviceCaps(dc, LOGPIXELSY), 72),
 			0,
 			0,
 			0,
@@ -446,7 +525,7 @@ public:
 			FindNext();
 		}
 		return 0;
-	}	
+	}
 
 	LRESULT OnEditSelectAll(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 	{
@@ -476,7 +555,6 @@ public:
 		{
 			FindNext();
 		}
-	
 
 		return 0;
 	}
