@@ -50,7 +50,16 @@ public:
 	DWORD m_dwSearchFlags;
 	std::string m_strSearchString;
 	CFindReplaceDialog* m_pCurrentFindReplaceDialog;
-
+	
+	int m_nWindowSizeX;
+	int m_nWindowSizeY;
+	
+	CMainFrame()
+	{
+		m_nWindowSizeX = 500;
+		m_nWindowSizeY = 400;
+	}
+	
 	virtual BOOL PreTranslateMessage(MSG* pMsg)
 	{
 		if (CFrameWindowImpl<CMainFrame>::PreTranslateMessage(pMsg))
@@ -76,6 +85,7 @@ public:
 
 	BEGIN_MSG_MAP(CMainFrame)
 		MESSAGE_HANDLER(WM_CREATE, OnCreate)
+		MESSAGE_HANDLER(WM_SIZE, OnSize)
 		MESSAGE_HANDLER(WM_DESTROY, OnDestroy)
 		MESSAGE_HANDLER(WM_CLOSE, OnClose)
 		MESSAGE_HANDLER(WM_DROPFILES, OnDropFiles)
@@ -229,6 +239,16 @@ public:
 
 		return FALSE;
 	}
+
+	LRESULT OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
+	{
+		RECT rc;
+		GetWindowRect(&rc);
+		m_nWindowSizeX = rc.right - rc.left;
+		m_nWindowSizeY = rc.bottom - rc.top;
+		bHandled = FALSE;
+		return 0;
+	}
 	
 	LRESULT OnDestroy(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& bHandled)
 	{
@@ -303,13 +323,12 @@ public:
 		//m_view.GetSel(m_currentBuffer.m_nStartChar, m_currentBuffer.m_nEndChar);
 		m_view.GetSel(m_currentBuffer.m_nStartChar, m_currentBuffer.m_nEndChar);
 
-		SetWindowPos(NULL, 0, 0, 500, 400, SWP_NOZORDER|SWP_NOMOVE);
+		SetWindowPos(NULL, 0, 0, m_nWindowSizeX, m_nWindowSizeY, SWP_NOZORDER|SWP_NOMOVE);
 		CenterWindow();
 
 		m_view.SetFocus();
 
 		SetWindowText(windowtitle.c_str());
-
 
 		return 0;
 	}
