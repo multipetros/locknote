@@ -69,7 +69,7 @@ public:
 
 		if (m_pCurrentFindReplaceDialog)
 		{
-			if (::IsDialogMessage(m_pCurrentFindReplaceDialog->m_hWnd, pMsg))
+			if (m_pCurrentFindReplaceDialog->IsDialogMessageA(pMsg))
 			{
 				return TRUE;
 			}
@@ -421,7 +421,17 @@ public:
 		if (nIndex != -1)
 		{
 			m_view.SetSel(nIndex,nIndex+strlen(searchtext.c_str()));
-		}			
+		}
+		else
+		{
+			char szErrorMessage[MAX_PATH] = "";
+			sprintf(szErrorMessage, STR(IDS_FIND_NOT_FOUND).c_str(), m_strSearchString.c_str());
+			Utils::MessageBox(*this, szErrorMessage, MB_OK | MB_ICONWARNING);
+			if (m_pCurrentFindReplaceDialog)
+			{
+				m_pCurrentFindReplaceDialog->SetFocus();
+			}
+		}
 	}
 
 	LRESULT OnEditFindNext(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)

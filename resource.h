@@ -17,7 +17,8 @@
 #define IDS_ENTER_NEW_PASSWORD          145
 #define IDS_PASSWORD_MISMATCH           146
 #define IDS_PASSWORD_EMPTY              148
-#define IDS_CONVERT_DONE                150
+#define IDS_CONVERT_DONE                149
+#define IDS_FIND_NOT_FOUND				150
 #define IDD_PASSWORD                    201
 #define IDB_BITMAP1                     202
 #define IDB_INFO                        202
