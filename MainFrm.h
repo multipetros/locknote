@@ -23,6 +23,8 @@
 #include <atldlgs.h>
 #include "utils.h"
 
+#define _LOCKNOTE_FONT _T("Lucida Console")
+
 UINT UWM_FINDMSGSTRING = CFindReplaceDialog::GetFindReplaceMsg();
 
 class CMainFrame : public CFrameWindowImpl<CMainFrame>, public CMessageFilter, public CIdleHandler
@@ -254,7 +256,7 @@ public:
 			CLIP_DEFAULT_PRECIS,
 			DEFAULT_QUALITY,
 			DEFAULT_PITCH,
-			_T("Courier New"));
+			_LOCKNOTE_FONT);
 
 		ATLASSERT(m_fontEdit);
 		m_view.SetFont(m_fontEdit);
