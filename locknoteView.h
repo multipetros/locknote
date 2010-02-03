@@ -24,7 +24,6 @@ public:
 
 	BOOL PreTranslateMessage(MSG* pMsg)
 	{
-		pMsg;
 		return FALSE;
 	}
 

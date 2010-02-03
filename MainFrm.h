@@ -47,16 +47,25 @@ public:
 	UndoBuffer m_currentBuffer;
 	std::string m_password;
 
-
 	DWORD m_dwSearchFlags;
 	std::string m_strSearchString;
 	CFindReplaceDialog* m_pCurrentFindReplaceDialog;
 
 	virtual BOOL PreTranslateMessage(MSG* pMsg)
 	{
-		if(CFrameWindowImpl<CMainFrame>::PreTranslateMessage(pMsg))
+		if (CFrameWindowImpl<CMainFrame>::PreTranslateMessage(pMsg))
+		{
 			return TRUE;
+		}
 
+		if (m_pCurrentFindReplaceDialog)
+		{
+			if (::IsDialogMessage(m_pCurrentFindReplaceDialog->m_hWnd, pMsg))
+			{
+				return TRUE;
+			}
+		}
+		
 		return m_view.PreTranslateMessage(pMsg);
 	}
 
@@ -104,7 +113,6 @@ public:
 //	LRESULT MessageHandler(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/)
 //	LRESULT CommandHandler(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 //	LRESULT NotifyHandler(int /*idCtrl*/, LPNMHDR /*pnmh*/, BOOL& /*bHandled*/)
-
 
 	LRESULT OnDropFiles(UINT /*uMsg*/, WPARAM wParam, LPARAM /*lParam*/, BOOL& /*bHandled*/)
 	{
@@ -167,9 +175,8 @@ public:
 
 	LRESULT OnFileSaveAs(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 	{
-		
 		std::string encryptPassword;
-
+		
 		CFileDialog dlg(FALSE, _T("exe"), NULL, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, NULL, *this);
 		if (dlg.DoModal() == IDOK)
 		{
@@ -321,7 +328,14 @@ public:
 
 	LRESULT OnEditPaste(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 	{
-		m_view.Paste();
+		if (m_pCurrentFindReplaceDialog)
+		{
+			m_pCurrentFindReplaceDialog->SendMessageToDescendants(WM_PASTE, 0, 0);
+		}
+		else
+		{
+			m_view.Paste();
+		}
 		return 0;
 	}
 
@@ -346,7 +360,7 @@ public:
 			m_pCurrentFindReplaceDialog->SetFocus();
 			return 0;
 		}
-		CFindReplaceDialog* pDlgFindReplace = new CFindReplaceDialog();		
+		CFindReplaceDialog* pDlgFindReplace = new CFindReplaceDialog();
 		pDlgFindReplace->Create(TRUE, m_strSearchString.c_str(), _T(""), m_dwSearchFlags, *this);
 		pDlgFindReplace->ShowWindow(SW_SHOW);
 		m_pCurrentFindReplaceDialog = pDlgFindReplace;
@@ -393,7 +407,15 @@ public:
 
 	LRESULT OnEditFindNext(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 	{
-		FindNext();
+		if (!m_pCurrentFindReplaceDialog)
+		{
+			BOOL bHandled = FALSE;
+			OnEditFind(0, 0, NULL, bHandled);
+		}
+		else
+		{
+			FindNext();
+		}
 		return 0;
 	}	
 
