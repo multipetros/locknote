@@ -41,6 +41,18 @@
 #define ID_VIEW_FONTSIZE_12             32784
 #define ID_VIEW_FONTSIZE_14             32785
 
+#define ID_FONT_ARIAL                   32586			// Arial
+#define ID_FONT_COURIER_NEW	            32587			// Courier New
+#define ID_FONT_LUCIDA_CONSOLE	        32588			// Lucida Console
+#define ID_FONT_TAHOMA         	        32589			// Tahoma
+#define ID_FONT_VERDANA        	        32590			// Verdana
+
+#define NAME_FONT_ARIAL                _T("Arial")
+#define NAME_FONT_COURIER_NEW          _T("Courier New")
+#define NAME_FONT_LUCIDA_CONSOLE       _T("Lucida Console")
+#define NAME_FONT_TAHOMA               _T("Tahoma")
+#define NAME_FONT_VERDANA              _T("Verdana")
+
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED

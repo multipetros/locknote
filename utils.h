@@ -26,6 +26,14 @@
 std::string GetPasswordDlg(HWND hWnd = NULL);
 std::string GetNewPasswordDlg(HWND hWnd = NULL);
 
+typedef struct wintraits_t
+{
+	int m_nWindowSizeX;
+	int m_nWindowSizeY;
+	int m_nFontSize;
+	std::string m_strFontName;
+} LOCKNOTEWINTRAITS, *LPLOCKNOTEWINTRAITS;
+
 namespace Utils
 {
 	using namespace CryptoPP;
@@ -191,7 +199,7 @@ namespace Utils
 		return false;
 	}
 
-	bool SaveTextToFile(const std::string& path, const std::string& text, std::string& password, HWND hWnd = 0)
+	bool SaveTextToFile(const std::string& path, const std::string& text, std::string& password, HWND hWnd = 0, LPLOCKNOTEWINTRAITS wintraits = NULL)
 	{
 		std::string filepath = path;
 
@@ -233,7 +241,32 @@ namespace Utils
 
 		::GetModuleFileName(Utils::GetModuleHandle(), szModulePath, MAX_PATH);
 		::CopyFile(szModulePath, filepath.c_str(), FALSE);	
-		return Utils::UpdateResource(filepath.c_str(), _T("CONTENT"), _T("PAYLOAD"), data);
+		bool bResult = Utils::UpdateResource(filepath.c_str(), _T("CONTENT"), _T("PAYLOAD"), data);
+
+		if (wintraits)
+		{
+			// write window sizes to resource
+			std::string sizeinfo;
+			char szSizeInfo[MAX_PATH] = "";
+			sprintf(szSizeInfo, "%d", wintraits->m_nWindowSizeX);
+			sizeinfo = szSizeInfo;
+			Utils::UpdateResource(filepath.c_str(), _T("SIZEX"), _T("INFORMATION"), sizeinfo);
+			sprintf(szSizeInfo, "%d", wintraits->m_nWindowSizeY);
+			sizeinfo = szSizeInfo;
+			Utils::UpdateResource(filepath.c_str(), _T("SIZEY"), _T("INFORMATION"), sizeinfo);
+		
+			// write font size
+			std::string fontsize;
+			char szFontSize[MAX_PATH] = "";
+			sprintf(szFontSize, "%d", wintraits->m_nFontSize);
+			fontsize = szFontSize;
+			Utils::UpdateResource(filepath.c_str(), _T("FONTSIZE"), _T("INFORMATION"), fontsize);
+
+			// write font typeface
+			Utils::UpdateResource(filepath.c_str(), _T("TYPEFACE"), _T("INFORMATION"), wintraits->m_strFontName);
+		}
+
+		return bResult;
 	}
 }
 

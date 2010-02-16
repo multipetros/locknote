@@ -23,8 +23,6 @@
 #include <atldlgs.h>
 #include "utils.h"
 
-#define _LOCKNOTE_FONT _T("Lucida Console")
-
 UINT UWM_FINDMSGSTRING = CFindReplaceDialog::GetFindReplaceMsg();
 
 class CMainFrame : public CFrameWindowImpl<CMainFrame>, public CMessageFilter, public CIdleHandler
@@ -54,14 +52,18 @@ public:
 	int m_nWindowSizeX;
 	int m_nWindowSizeY;
 	int m_nFontSize;
+	std::string m_strFontName;
+	bool m_bTraitsChanged;
 
 	CMenu* m_pMenu;
 
 	CMainFrame()
 	{
-		m_nWindowSizeX = 500;
+		m_nWindowSizeX = 570;
 		m_nWindowSizeY = 400;
 		m_nFontSize = 10;
+		m_strFontName = NAME_FONT_LUCIDA_CONSOLE;
+		m_bTraitsChanged = false;
 		m_pMenu = NULL;
 	}
 
@@ -110,6 +112,11 @@ public:
 		COMMAND_ID_HANDLER(ID_VIEW_FONTSIZE_10, OnViewFontSize)
 		COMMAND_ID_HANDLER(ID_VIEW_FONTSIZE_12, OnViewFontSize)
 		COMMAND_ID_HANDLER(ID_VIEW_FONTSIZE_14, OnViewFontSize)
+		COMMAND_ID_HANDLER(ID_FONT_ARIAL, OnViewFontTypeFace)
+		COMMAND_ID_HANDLER(ID_FONT_COURIER_NEW, OnViewFontTypeFace)
+		COMMAND_ID_HANDLER(ID_FONT_LUCIDA_CONSOLE, OnViewFontTypeFace)
+		COMMAND_ID_HANDLER(ID_FONT_TAHOMA, OnViewFontTypeFace)
+		COMMAND_ID_HANDLER(ID_FONT_VERDANA, OnViewFontTypeFace)
 		
 		COMMAND_CODE_HANDLER(EN_CHANGE, OnChange)
 		CHAIN_MSG_MAP(CFrameWindowImpl<CMainFrame>)
@@ -126,7 +133,12 @@ public:
 
 	bool SaveTextToFile(const std::string& path, const std::string& text, std::string& password, HWND hWnd = 0)
 	{
-		return Utils::SaveTextToFile(path, text, password, *this);
+		LOCKNOTEWINTRAITS wintraits;
+		wintraits.m_nFontSize = m_nFontSize;
+		wintraits.m_nWindowSizeX = m_nWindowSizeX;
+		wintraits.m_nWindowSizeY = m_nWindowSizeY;
+		wintraits.m_strFontName = m_strFontName;
+		return Utils::SaveTextToFile(path, text, password, *this, &wintraits);
 	}
 
 // Handler prototypes (uncomment arguments if needed):
@@ -163,6 +175,8 @@ public:
 	LRESULT OnViewFontSize(WORD wNotifyCode, WORD wID, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 	{
 		// get selected font size and check the correct menuitem
+		int nOldFontSize = m_nFontSize;
+
 		switch (wID)
 		{
 		case ID_VIEW_FONTSIZE_9:
@@ -196,11 +210,104 @@ public:
 			CLIP_DEFAULT_PRECIS,
 			DEFAULT_QUALITY,
 			DEFAULT_PITCH,
-			_LOCKNOTE_FONT);
+			m_strFontName.c_str());
 
 		ATLASSERT(m_fontEdit);
 		m_view.SetFont(m_fontEdit);
 		
+		if (m_nFontSize != nOldFontSize)
+		{
+			m_bTraitsChanged = true;
+		}
+		return 0;
+	}
+
+	void CheckFontTypeFace()
+	{
+		// check the correct menu item
+		HMENU hMenu = this->GetMenu();
+		CMenuHandle menu(hMenu);
+		menu.CheckMenuItem(ID_FONT_ARIAL, MF_UNCHECKED);
+		menu.CheckMenuItem(ID_FONT_COURIER_NEW, MF_UNCHECKED);
+		menu.CheckMenuItem(ID_FONT_LUCIDA_CONSOLE, MF_UNCHECKED);
+		menu.CheckMenuItem(ID_FONT_TAHOMA, MF_UNCHECKED);
+		menu.CheckMenuItem(ID_FONT_VERDANA, MF_UNCHECKED);
+		if (m_strFontName == "Arial")
+		{
+			menu.CheckMenuItem(ID_FONT_ARIAL, MF_CHECKED);
+		}
+		else if (m_strFontName == "Courier New")
+		{
+			menu.CheckMenuItem(ID_FONT_COURIER_NEW, MF_CHECKED);
+		}
+		else if (m_strFontName == "Tahoma")
+		{
+			menu.CheckMenuItem(ID_FONT_TAHOMA, MF_CHECKED);
+		}
+		else if (m_strFontName == "Verdana")
+		{
+			menu.CheckMenuItem(ID_FONT_VERDANA, MF_CHECKED);
+		}
+		else if (m_strFontName == "Lucida Console")
+		{
+			menu.CheckMenuItem(ID_FONT_LUCIDA_CONSOLE, MF_CHECKED);
+		}
+		else
+		{
+			menu.CheckMenuItem(ID_FONT_LUCIDA_CONSOLE, MF_CHECKED);
+		}
+	}
+
+	LRESULT OnViewFontTypeFace(WORD wNotifyCode, WORD wID, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
+	{
+		// get selected font name and check the correct menu item
+		std::string strOldFontName = m_strFontName;
+		switch (wID)
+		{
+		case ID_FONT_ARIAL:
+			m_strFontName = NAME_FONT_ARIAL;
+			break;
+		case ID_FONT_COURIER_NEW:
+			m_strFontName = NAME_FONT_COURIER_NEW;
+			break;
+		case ID_FONT_TAHOMA:
+			m_strFontName = NAME_FONT_TAHOMA;
+			break;
+		case ID_FONT_VERDANA:
+			m_strFontName = NAME_FONT_VERDANA;
+			break;
+		case ID_FONT_LUCIDA_CONSOLE:
+		default:
+			wID = ID_FONT_LUCIDA_CONSOLE;
+			m_strFontName = NAME_FONT_LUCIDA_CONSOLE;
+		}
+		CheckFontTypeFace();
+
+		CClientDC dc(*this);
+		m_fontEdit.DeleteObject();
+		m_fontEdit.CreateFont(
+			-MulDiv(m_nFontSize, GetDeviceCaps(dc, LOGPIXELSY), 72),
+			0,
+			0,
+			0,
+			FW_NORMAL,
+			FALSE,
+			FALSE,
+			FALSE,
+			DEFAULT_CHARSET,
+			OUT_DEFAULT_PRECIS,
+			CLIP_DEFAULT_PRECIS,
+			DEFAULT_QUALITY,
+			DEFAULT_PITCH,
+			m_strFontName.c_str());
+
+		ATLASSERT(m_fontEdit);
+		m_view.SetFont(m_fontEdit);
+		
+		if (strOldFontName != m_strFontName)
+		{
+			m_bTraitsChanged = true;
+		}
 		return 0;
 	}
 
@@ -285,16 +392,21 @@ public:
 	{
 		std::string text = GetText();
 
-		if (_tcscmp(m_text.c_str(),text.c_str()))
+		if (_tcscmp(m_text.c_str(),text.c_str()) || m_bTraitsChanged)
 		{
 			int nResult = Utils::MessageBox(*this, STR(IDS_SAVE_CHANGES), MB_YESNOCANCEL | MB_ICONQUESTION);
 			if (nResult == IDCANCEL)
+			{
 				return FALSE;
+			}
 
 			bHandled = FALSE;
 
 			if (nResult == IDNO)
+			{
+				m_bTraitsChanged = false;
 				return FALSE;
+			}
 
 			if (!_tcslen(text.c_str()))
 			{
@@ -321,11 +433,17 @@ public:
 	
 	LRESULT OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 	{
+		int m_nOldWindowSizeX = m_nWindowSizeX;
+		int m_nOldWindowSizeY = m_nWindowSizeY;
 		RECT rc;
 		GetWindowRect(&rc);
 		m_nWindowSizeX = rc.right - rc.left;
 		m_nWindowSizeY = rc.bottom - rc.top;
 		bHandled = FALSE;
+		if (m_nWindowSizeX != m_nOldWindowSizeX || m_nWindowSizeY != m_nOldWindowSizeY)
+		{
+			m_bTraitsChanged = true;
+		}
 		return 0;
 	}
 
@@ -362,7 +480,7 @@ public:
 			CLIP_DEFAULT_PRECIS,
 			DEFAULT_QUALITY,
 			DEFAULT_PITCH,
-			_LOCKNOTE_FONT);
+			m_strFontName.c_str());
 
 		ATLASSERT(m_fontEdit);
 		m_view.SetFont(m_fontEdit);

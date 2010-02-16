@@ -163,7 +163,15 @@ BEGIN
     END
 	POPUP "&Ansicht"
     BEGIN
-        POPUP "&Schriftgröße"
+        POPUP "&Schriftart"
+		BEGIN
+			MENUITEM "Arial",					ID_FONT_ARIAL
+			MENUITEM "Courier New",				ID_FONT_COURIER_NEW
+			MENUITEM "Lucida Console",			ID_FONT_LUCIDA_CONSOLE  // CHECKED
+			MENUITEM "Tahoma",					ID_FONT_TAHOMA
+			MENUITEM "Verdana",					ID_FONT_VERDANA
+		END
+        POPUP "Schrift&größe"
 		BEGIN
 			MENUITEM "9",						ID_VIEW_FONTSIZE_9
 			MENUITEM "10",						ID_VIEW_FONTSIZE_10	//CHECKED
@@ -231,7 +239,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH.\r\n\r\nGeschrieben von:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\n\r\nÜbersetzungen:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® ist ein eingetragenes Warenzeichen in der Europäischen Union, den Vereinigten Staaten von Amerika, der Schweiz und anderen Ländern.\r\n\r\nDieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 2 der Lizenz oder (nach Ihrer Option) jeder späteren Version.\r\n\r\nDie Veröffentlichung dieses Programms erfolgt in der Hoffnung, daß es Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. Details finden Sie in der GNU General Public License.\r\n\r\nSie sollten ein Exemplar der GNU General Public License zusammen mit diesem Programm erhalten haben. Falls nicht, schreiben Sie an die Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA."
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH.\r\n\r\nGeschrieben von:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRégis Barbier\r\n\r\nÜbersetzungen:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® ist ein eingetragenes Warenzeichen in der Europäischen Union, den Vereinigten Staaten von Amerika, der Schweiz und anderen Ländern.\r\n\r\nDieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 2 der Lizenz oder (nach Ihrer Option) jeder späteren Version.\r\n\r\nDie Veröffentlichung dieses Programms erfolgt in der Hoffnung, daß es Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. Details finden Sie in der GNU General Public License.\r\n\r\nSie sollten ein Exemplar der GNU General Public License zusammen mit diesem Programm erhalten haben. Falls nicht, schreiben Sie an die Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA."
 END
 
 #endif    // German (Germany) resources
@@ -340,7 +348,15 @@ BEGIN
     END
 	POPUP "&View"
     BEGIN
-        POPUP "&Font size"
+        POPUP "&Font"
+		BEGIN
+			MENUITEM "Arial",					ID_FONT_ARIAL
+			MENUITEM "Courier New",				ID_FONT_COURIER_NEW
+			MENUITEM "Lucida Console",			ID_FONT_LUCIDA_CONSOLE  // CHECKED
+			MENUITEM "Tahoma",					ID_FONT_TAHOMA
+			MENUITEM "Verdana",					ID_FONT_VERDANA
+		END
+        POPUP "Font &size"
 		BEGIN
 			MENUITEM "9",						ID_VIEW_FONTSIZE_9
 			MENUITEM "10",						ID_VIEW_FONTSIZE_10	//CHECKED
@@ -472,7 +488,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nWritten by:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\n\r\nTranslations:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® is a registered trademark in the European Union, the United States of America, Switzerland and other countries.\r\n\r\nThis program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\r\n\r\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\r\n\r\nYou should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nWritten by:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRégis Barbier\r\n\r\nTranslations:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® is a registered trademark in the European Union, the United States of America, Switzerland and other countries.\r\n\r\nThis program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\r\n\r\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\r\n\r\nYou should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 END
 
 #endif    // English (U.S.) resources
@@ -582,6 +598,14 @@ BEGIN
     END
 	POPUP "Aff&ichage"
     BEGIN
+        POPUP "&Police"
+		BEGIN
+			MENUITEM "Arial",					ID_FONT_ARIAL
+			MENUITEM "Courier New",				ID_FONT_COURIER_NEW
+			MENUITEM "Lucida Console",			ID_FONT_LUCIDA_CONSOLE  // CHECKED
+			MENUITEM "Tahoma",					ID_FONT_TAHOMA
+			MENUITEM "Verdana",					ID_FONT_VERDANA
+		END
         POPUP "&Taille de police"
 		BEGIN
 			MENUITEM "9",						ID_VIEW_FONTSIZE_9
@@ -675,7 +699,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nécrit par :\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\n\r\nTraductions:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® est une marque déposée dans l'Union Européenne, les Etats-Unis d'Amérique, la Suisse et autres pays.\r\n\r\nCe programme est un logiciel libre; vous pouvez le re-distribuer et/ou le modifier selon les termes de la 'General Public License' de GNU publiée par la 'Free Software Foundation'; version 2 de la licence, ou (à votre convenance) toute autre version ultérieure.\r\n\r\nCe programme est distribué avec l'espoir qu'il vous sera utile, mais SANS AUCUNE GARANTIE; également sans même la garantie implicite d'être COMMERCIALISABLE ou de correspondre à un USAGE SPECIFIQUE. Voyez la 'General Public License' de GNU pour plus de détails.\r\n\r\nVous devriez avoir reçu une copie de la 'General Public License' de GNU fournie avec ce programme; dans le cas contraire, vous pouvez écrire à : Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nécrit par :\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRégis Barbier\r\n\r\nTraductions:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® est une marque déposée dans l'Union Européenne, les Etats-Unis d'Amérique, la Suisse et autres pays.\r\n\r\nCe programme est un logiciel libre; vous pouvez le re-distribuer et/ou le modifier selon les termes de la 'General Public License' de GNU publiée par la 'Free Software Foundation'; version 2 de la licence, ou (à votre convenance) toute autre version ultérieure.\r\n\r\nCe programme est distribué avec l'espoir qu'il vous sera utile, mais SANS AUCUNE GARANTIE; également sans même la garantie implicite d'être COMMERCIALISABLE ou de correspondre à un USAGE SPECIFIQUE. Voyez la 'General Public License' de GNU pour plus de détails.\r\n\r\nVous devriez avoir reçu une copie de la 'General Public License' de GNU fournie avec ce programme; dans le cas contraire, vous pouvez écrire à : Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 END
 
 #endif    // French (France) resources
@@ -785,6 +809,14 @@ BEGIN
     END
 	POPUP "&Ver"
     BEGIN
+        POPUP "&Fuente"
+		BEGIN
+			MENUITEM "Arial",					ID_FONT_ARIAL
+			MENUITEM "Courier New",				ID_FONT_COURIER_NEW
+			MENUITEM "Lucida Console",			ID_FONT_LUCIDA_CONSOLE  // CHECKED
+			MENUITEM "Tahoma",					ID_FONT_TAHOMA
+			MENUITEM "Verdana",					ID_FONT_VERDANA
+		END
         POPUP "&Tamaño de fuente"
 		BEGIN
 			MENUITEM "9",						ID_VIEW_FONTSIZE_9
@@ -878,7 +910,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nEscrito por:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\n\r\nTraducciones:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® es una marca comercial registrada en la Unión Europea, en los Estados Unidos de América, en Suiza y en otros países.\r\n\r\nEste programa es un software gratuito; usted puede redistribuirlo y modificarlo bajo los términos de la Licencia Pública General GNU publicada por Free Software Foundation; ya sea la versión 2 de la licencia o cualquier versión posterior (a su discreción).\r\n\r\nEste programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA; no incluye ni siguiera la garantía implícita de COMERCIABILIDAD o ADECUACIÓN PARA UN FIN PARTICULAR. Consulte la Licencia Pública General GNU para obtener más detalles.\r\n\r\nDebería haber recibido una copia de la Licencia Pública General GNU junto con este programa; si no la recibió, escriba a Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nEscrito por:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRégis Barbier\r\n\r\nTraducciones:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® es una marca comercial registrada en la Unión Europea, en los Estados Unidos de América, en Suiza y en otros países.\r\n\r\nEste programa es un software gratuito; usted puede redistribuirlo y modificarlo bajo los términos de la Licencia Pública General GNU publicada por Free Software Foundation; ya sea la versión 2 de la licencia o cualquier versión posterior (a su discreción).\r\n\r\nEste programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA; no incluye ni siguiera la garantía implícita de COMERCIABILIDAD o ADECUACIÓN PARA UN FIN PARTICULAR. Consulte la Licencia Pública General GNU para obtener más detalles.\r\n\r\nDebería haber recibido una copia de la Licencia Pública General GNU junto con este programa; si no la recibió, escriba a Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 END
 
 #endif    // Spanish resources
@@ -989,6 +1021,14 @@ BEGIN
     END
 	POPUP "B&ekijken"
     BEGIN
+        POPUP "&Letter"
+		BEGIN
+			MENUITEM "Arial",					ID_FONT_ARIAL
+			MENUITEM "Courier New",				ID_FONT_COURIER_NEW
+			MENUITEM "Lucida Console",			ID_FONT_LUCIDA_CONSOLE  // CHECKED
+			MENUITEM "Tahoma",					ID_FONT_TAHOMA
+			MENUITEM "Verdana",					ID_FONT_VERDANA
+		END
         POPUP "&Lettergrootte"
 		BEGIN
 			MENUITEM "9",						ID_VIEW_FONTSIZE_9
@@ -1082,7 +1122,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH.\r\n\r\nGescheven door:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\n\r\nVertalingen:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® is een geregistreerd merk in de Europese Unie, de Verenigde Staten van Amerika, Zwitserland en andere landen.\r\n\r\nDit programma is gratis software; u kunt het opnieuw uitgeven en/of het programma aanpassen onder de termen van de GNU General Public License gepubliceerd onder de Free Software Foundation; onder de tweede versie, of (uw keuze) latere versies.\r\n\r\nDit programma is uitgegeven in de hoop dat het handig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de inbegrepen garantie van MERCHANTABILITY of GESCHIKTHEID VOOR PARTICULIER GEBRUIK. Zie de GNU General Public License voor meer details.\r\n\r\nU zou een kopie van de GNU General Public License moeten hebben gekregen met dit programma; zo niet, schijf naar de Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH.\r\n\r\nGescheven door:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRégis Barbier\r\n\r\nVertalingen:\r\nRégis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® is een geregistreerd merk in de Europese Unie, de Verenigde Staten van Amerika, Zwitserland en andere landen.\r\n\r\nDit programma is gratis software; u kunt het opnieuw uitgeven en/of het programma aanpassen onder de termen van de GNU General Public License gepubliceerd onder de Free Software Foundation; onder de tweede versie, of (uw keuze) latere versies.\r\n\r\nDit programma is uitgegeven in de hoop dat het handig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de inbegrepen garantie van MERCHANTABILITY of GESCHIKTHEID VOOR PARTICULIER GEBRUIK. Zie de GNU General Public License voor meer details.\r\n\r\nU zou een kopie van de GNU General Public License moeten hebben gekregen met dit programma; zo niet, schijf naar de Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 END
 
 #endif    // Dutch resources

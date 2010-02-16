@@ -175,28 +175,40 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 	wndMain.m_text = text;
 
 	// get window sizes from resource
-	std::string sizeinfo;
-	Utils::LoadResource(_T("INFORMATION"), _T("SIZE"), sizeinfo);
-	if (_tcslen(sizeinfo.c_str()))
+	std::string strSizeX;
+	std::string strSizeY;
+	Utils::LoadResource(_T("SIZEX"), _T("INFORMATION"), strSizeX);
+	Utils::LoadResource(_T("SIZEY"), _T("INFORMATION"), strSizeY);
+	if (_tcslen(strSizeX.c_str()) && _tcslen(strSizeY.c_str()))
 	{
-		// sizeinfo format: x:500|y:400
-		std::string strX = sizeinfo.substr(0, sizeinfo.find('|'));
-		std::string strY = sizeinfo.substr(sizeinfo.find('|') + 1, -1);
-		wndMain.m_nWindowSizeX = atoi(strX.substr(2, -1).c_str());
-		wndMain.m_nWindowSizeY = atoi(strY.substr(2, -1).c_str());
+		wndMain.m_nWindowSizeX = atoi(strSizeX.c_str());
+		wndMain.m_nWindowSizeY = atoi(strSizeY.c_str());
 	}
 
 	// get font size
 	std::string fontsize;
-	Utils::LoadResource(_T("INFORMATION"), _T("FONTSIZE"), fontsize);
+	Utils::LoadResource(_T("FONTSIZE"), _T("INFORMATION"), fontsize);
 	if (_tcslen(fontsize.c_str()))
 	{
-		// fontsize format: 10
+		// fontsize format: 10 (example)
 		wndMain.m_nFontSize = atoi(fontsize.c_str());
 	}
 	else
 	{
 		wndMain.m_nFontSize = 10;
+	}
+
+	// get font set
+	std::string fontface;
+	Utils::LoadResource(_T("TYPEFACE"), _T("INFORMATION"), fontface);
+	if (_tcslen(fontface.c_str()))
+	{
+		// font typeface format: "Lucida Console" (example)
+		wndMain.m_strFontName = fontface;
+	}
+	else
+	{
+		wndMain.m_strFontName = NAME_FONT_LUCIDA_CONSOLE;
 	}
 	
 	if(wndMain.CreateEx() == NULL)
@@ -205,6 +217,7 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 		return 0;
 	}
 	wndMain.CheckFontSize();
+	wndMain.CheckFontTypeFace();
 
 	*fmSingleInstanceHWND = wndMain.m_hWnd;
 
@@ -214,7 +227,7 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 
 	_Module.RemoveMessageLoop();
 
-	if (((wndMain.m_text != text)||(wndMain.m_password != password)) && (_tcslen(wndMain.m_password.c_str())))
+	if (((wndMain.m_text != text) || (wndMain.m_password != password) || wndMain.m_bTraitsChanged) && (_tcslen(wndMain.m_password.c_str())))
 	{
 		password = wndMain.m_password;
 
@@ -242,16 +255,22 @@ int Run(LPTSTR /*lpstrCmdLine*/ = NULL, int nCmdShow = SW_SHOWDEFAULT)
 		// write window sizes to resource
 		std::string sizeinfo;
 		char szSizeInfo[MAX_PATH] = "";
-		sprintf(szSizeInfo, "x:%d|y:%d", wndMain.m_nWindowSizeX, wndMain.m_nWindowSizeY);
+		sprintf(szSizeInfo, "%d", wndMain.m_nWindowSizeX);
 		sizeinfo = szSizeInfo;
-		Utils::UpdateResource(szFileName, _T("INFORMATION"), _T("SIZE"), sizeinfo);
+		Utils::UpdateResource(szFileName, _T("SIZEX"), _T("INFORMATION"), sizeinfo);
+		sprintf(szSizeInfo, "%d", wndMain.m_nWindowSizeY);
+		sizeinfo = szSizeInfo;
+		Utils::UpdateResource(szFileName, _T("SIZEY"), _T("INFORMATION"), sizeinfo);
 	
 		// write font size
 		std::string fontsize;
 		char szFontSize[MAX_PATH] = "";
 		sprintf(szFontSize, "%d", wndMain.m_nFontSize);
 		fontsize = szFontSize;
-		Utils::UpdateResource(szFileName, _T("INFORMATION"), _T("FONTSIZE"), fontsize);
+		Utils::UpdateResource(szFileName, _T("FONTSIZE"), _T("INFORMATION"), fontsize);
+
+		// write font typeface
+		Utils::UpdateResource(szFileName, _T("TYPEFACE"), _T("INFORMATION"), wndMain.m_strFontName);
 
 		_tspawnl(_P_NOWAIT, szFileName, Utils::Quote(szFileName).c_str(), _T("-writeback"), Utils::Quote(szModulePath).c_str(), NULL);
 	}

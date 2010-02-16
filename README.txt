@@ -1,14 +1,15 @@
 Steganos LockNote - Self-modifying encrypted notepad
 Copyright (C) 2006-2010 Steganos GmbH
 
+
 Build Notes
 -----------
-Written by Leonard Ritter, 2006/03/06
-Amended by Robert Foertsch, 2010/02/03
 
-At the time of release, LockNote builds with Microsoft Visual Studio .NET 2003
-only, but it is not impossible that it builds with other compilers/IDE's as
-well.
+Written by Robert Foertsch, 2010/02/16
+
+As of version 1.0.5, LockNote builds with Microsoft Visual Studio 2008.
+The old solution and project files for Microsoft Visual Studio .NET 2003
+are included as well.
 
 There is also initial support for the SCons build system, but you need
 to manually modify the SConstruct file to get it to work.
@@ -17,29 +18,31 @@ The LockNote source has following dependencies:
 
 * CryptoPP, available at http://www.cryptopp.com/.
   The source must reside in the cryptopp subdirectory, and a compiled libfile
-named 'cryptopp.lib' must reside in the root folder of the LockNote source.
+  named 'cryptlib.lib' must reside in the root folder of the LockNote source.
+  (Note that if you build a Debug version, you need a Debug build of 'cryptlib.lib'
+  in the root folder)
 
 * AESPHM, a module using the CryptoPP, available at
   http://www.denisbider.com/aesphm.zip
  
 * WTL, available at http://wtl.sourceforge.net/.
-  The WTL include files must be available through the global path settings.
+  The WTL include files must reside in the wtl80 subdirectory.
 
-The release build will compile with warnings related to exception handling.
-Exception handling is not important for stable execution, but a requirement of
-the CryptoPP library.
+The release build will compile with deprecation warnings in VS 2008 due to some
+functions used in the code for which there are now replacements.
+
 
 History
 -------
 
-* 1.0.5, 2010/02/03:
-	- FIX: Find Dialog, Enter/Tab/Escape/Space/Ctrl-V keys work
-	- FIX: Find Dialog, Message displayed if search string is not found
-	- NEW: Message displayed if search string is not found
-	- NEW: LockNote remembers window size if there are saved changes
+* 1.0.5, 2010/02/16:
+	- FIX: Find Dialog: Enter/Tab/Escape/Space/Ctrl-V keys work
+	- FIX: Find Dialog: Message displayed if search string is not found
+	- FIX: Find Dialog: F3 brings up Find Dialog or finds next result
 	- NEW: Changed default font to Lucida Console to avoid 1/l - O/0 confusion
+	- NEW: Font typeface can be selected (Arial/Courier New/Lucida Console/Tahoma/Verdana)
 	- NEW: Font size can be selected (9/10/12/14)
-	- NEW: LockNote remembers font size if there are saved changes
+	- NEW: LockNote saves window size, font size and font typeface
 	
 * 1.0.4, 2007/04/05:
 	- NEW: Added Dutch translation
