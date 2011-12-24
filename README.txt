@@ -1,6 +1,11 @@
 Steganos LockNote - Self-modifying encrypted notepad
 Copyright (C) 2006-2010 Steganos GmbH
 
+ABOUT THIS FORK
+---------------
+This is a fork of the original Steganos LockNote 1.0.5, with greek language added
+by Petros Kyladitis, 2011/12/24
+
 
 Build Notes
 -----------

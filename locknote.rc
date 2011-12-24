@@ -239,7 +239,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH.\r\n\r\nGeschrieben von:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRιgis Barbier\r\n\r\nάbersetzungen:\r\nRιgis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® ist ein eingetragenes Warenzeichen in der Europδischen Union, den Vereinigten Staaten von Amerika, der Schweiz und anderen Lδndern.\r\n\r\nDieses Programm ist freie Software. Sie kφnnen es unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation verφffentlicht, weitergeben und/oder modifizieren, entweder gemδί Version 2 der Lizenz oder (nach Ihrer Option) jeder spδteren Version.\r\n\r\nDie Verφffentlichung dieses Programms erfolgt in der Hoffnung, daί es Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FάR EINEN BESTIMMTEN ZWECK. Details finden Sie in der GNU General Public License.\r\n\r\nSie sollten ein Exemplar der GNU General Public License zusammen mit diesem Programm erhalten haben. Falls nicht, schreiben Sie an die Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA."
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH.\r\n\r\nGeschrieben von:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRιgis Barbier\r\n\r\nάbersetzungen:\r\nRιgis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenkn\r\nPetros Kyladitis\r\n\r\nSteganos® ist ein eingetragenes Warenzeichen in der Europδischen Union, den Vereinigten Staaten von Amerika, der Schweiz und anderen Lδndern.\r\n\r\nDieses Programm ist freie Software. Sie kφnnen es unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation verφffentlicht, weitergeben und/oder modifizieren, entweder gemδί Version 2 der Lizenz oder (nach Ihrer Option) jeder spδteren Version.\r\n\r\nDie Verφffentlichung dieses Programms erfolgt in der Hoffnung, daί es Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FάR EINEN BESTIMMTEN ZWECK. Details finden Sie in der GNU General Public License.\r\n\r\nSie sollten ein Exemplar der GNU General Public License zusammen mit diesem Programm erhalten haben. Falls nicht, schreiben Sie an die Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA."
 END
 
 #endif    // German (Germany) resources
@@ -488,7 +488,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nWritten by:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRιgis Barbier\r\n\r\nTranslations:\r\nRιgis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® is a registered trademark in the European Union, the United States of America, Switzerland and other countries.\r\n\r\nThis program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\r\n\r\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\r\n\r\nYou should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nWritten by:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRιgis Barbier\r\n\r\nTranslations:\r\nRιgis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenkn\r\nPetros Kyladitis\r\n\r\nSteganos® is a registered trademark in the European Union, the United States of America, Switzerland and other countries.\r\n\r\nThis program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\r\n\r\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\r\n\r\nYou should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 END
 
 #endif    // English (U.S.) resources
@@ -699,7 +699,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nιcrit par :\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRιgis Barbier\r\n\r\nTraductions:\r\nRιgis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® est une marque dιposιe dans l'Union Europιenne, les Etats-Unis d'Amιrique, la Suisse et autres pays.\r\n\r\nCe programme est un logiciel libre; vous pouvez le re-distribuer et/ou le modifier selon les termes de la 'General Public License' de GNU publiιe par la 'Free Software Foundation'; version 2 de la licence, ou (ΰ votre convenance) toute autre version ultιrieure.\r\n\r\nCe programme est distribuι avec l'espoir qu'il vous sera utile, mais SANS AUCUNE GARANTIE; ιgalement sans mκme la garantie implicite d'κtre COMMERCIALISABLE ou de correspondre ΰ un USAGE SPECIFIQUE. Voyez la 'General Public License' de GNU pour plus de dιtails.\r\n\r\nVous devriez avoir reηu une copie de la 'General Public License' de GNU fournie avec ce programme; dans le cas contraire, vous pouvez ιcrire ΰ : Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nιcrit par :\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRιgis Barbier\r\n\r\nTraductions:\r\nRιgis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenkn\r\nPetros Kyladitis\r\n\r\nSteganos® est une marque dιposιe dans l'Union Europιenne, les Etats-Unis d'Amιrique, la Suisse et autres pays.\r\n\r\nCe programme est un logiciel libre; vous pouvez le re-distribuer et/ou le modifier selon les termes de la 'General Public License' de GNU publiιe par la 'Free Software Foundation'; version 2 de la licence, ou (ΰ votre convenance) toute autre version ultιrieure.\r\n\r\nCe programme est distribuι avec l'espoir qu'il vous sera utile, mais SANS AUCUNE GARANTIE; ιgalement sans mκme la garantie implicite d'κtre COMMERCIALISABLE ou de correspondre ΰ un USAGE SPECIFIQUE. Voyez la 'General Public License' de GNU pour plus de dιtails.\r\n\r\nVous devriez avoir reηu une copie de la 'General Public License' de GNU fournie avec ce programme; dans le cas contraire, vous pouvez ιcrire ΰ : Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 END
 
 #endif    // French (France) resources
@@ -910,7 +910,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nEscrito por:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRιgis Barbier\r\n\r\nTraducciones:\r\nRιgis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® es una marca comercial registrada en la Uniσn Europea, en los Estados Unidos de Amιrica, en Suiza y en otros paνses.\r\n\r\nEste programa es un software gratuito; usted puede redistribuirlo y modificarlo bajo los tιrminos de la Licencia Pϊblica General GNU publicada por Free Software Foundation; ya sea la versiσn 2 de la licencia o cualquier versiσn posterior (a su discreciσn).\r\n\r\nEste programa se distribuye con la esperanza de que sea ϊtil, pero SIN NINGUNA GARANTΝA; no incluye ni siguiera la garantνa implνcita de COMERCIABILIDAD o ADECUACIΣN PARA UN FIN PARTICULAR. Consulte la Licencia Pϊblica General GNU para obtener mαs detalles.\r\n\r\nDeberνa haber recibido una copia de la Licencia Pϊblica General GNU junto con este programa; si no la recibiσ, escriba a Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH\r\n\r\nEscrito por:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRιgis Barbier\r\n\r\nTraducciones:\r\nRιgis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenkn\r\nPetros Kyladitis\r\n\r\nSteganos® es una marca comercial registrada en la Uniσn Europea, en los Estados Unidos de Amιrica, en Suiza y en otros paνses.\r\n\r\nEste programa es un software gratuito; usted puede redistribuirlo y modificarlo bajo los tιrminos de la Licencia Pϊblica General GNU publicada por Free Software Foundation; ya sea la versiσn 2 de la licencia o cualquier versiσn posterior (a su discreciσn).\r\n\r\nEste programa se distribuye con la esperanza de que sea ϊtil, pero SIN NINGUNA GARANTΝA; no incluye ni siguiera la garantνa implνcita de COMERCIABILIDAD o ADECUACIΣN PARA UN FIN PARTICULAR. Consulte la Licencia Pϊblica General GNU para obtener mαs detalles.\r\n\r\nDeberνa haber recibido una copia de la Licencia Pϊblica General GNU junto con este programa; si no la recibiσ, escriba a Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 END
 
 #endif    // Spanish resources
@@ -1122,12 +1122,223 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH.\r\n\r\nGescheven door:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRιgis Barbier\r\n\r\nVertalingen:\r\nRιgis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\n\r\nSteganos® is een geregistreerd merk in de Europese Unie, de Verenigde Staten van Amerika, Zwitserland en andere landen.\r\n\r\nDit programma is gratis software; u kunt het opnieuw uitgeven en/of het programma aanpassen onder de termen van de GNU General Public License gepubliceerd onder de Free Software Foundation; onder de tweede versie, of (uw keuze) latere versies.\r\n\r\nDit programma is uitgegeven in de hoop dat het handig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de inbegrepen garantie van MERCHANTABILITY of GESCHIKTHEID VOOR PARTICULIER GEBRUIK. Zie de GNU General Public License voor meer details.\r\n\r\nU zou een kopie van de GNU General Public License moeten hebben gekregen met dit programma; zo niet, schijf naar de Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+    IDS_COPYRIGHT           "Copyright © 2006-2010 Steganos GmbH.\r\n\r\nGescheven door:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRιgis Barbier\r\n\r\nVertalingen:\r\nRιgis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenkn\r\nPetros Kyladitis\r\n\r\nSteganos® is een geregistreerd merk in de Europese Unie, de Verenigde Staten van Amerika, Zwitserland en andere landen.\r\n\r\nDit programma is gratis software; u kunt het opnieuw uitgeven en/of het programma aanpassen onder de termen van de GNU General Public License gepubliceerd onder de Free Software Foundation; onder de tweede versie, of (uw keuze) latere versies.\r\n\r\nDit programma is uitgegeven in de hoop dat het handig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de inbegrepen garantie van MERCHANTABILITY of GESCHIKTHEID VOOR PARTICULIER GEBRUIK. Zie de GNU General Public License voor meer details.\r\n\r\nU zou een kopie van de GNU General Public License moeten hebben gekregen met dit programma; zo niet, schijf naar de Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 END
 
 #endif    // Dutch resources
 /////////////////////////////////////////////////////////////////////////////
 
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Greek resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ELL)
+#ifdef _WIN32
+LANGUAGE LANG_GREEK, SUBLANG_DEFAULT
+#pragma code_page(1253)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PASSWORD DIALOGEX 0, 0, 237, 123
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_PASSWORD1,108,48,109,14,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWORD2,108,72,109,15,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&OK",IDOK,120,102,50,14
+    PUSHBUTTON      "Ά&κυρο",IDCANCEL,180,102,50,14
+    LTEXT           "Static",IDC_INFOTEXT,18,18,198,20
+    LTEXT           "Static",IDC_STATIC_PASSWORD1,18,50,84,8,0,WS_EX_RIGHT
+    LTEXT           "Static",IDC_STATIC_PASSWORD2,18,74,84,8,0,WS_EX_RIGHT
+    GROUPBOX        "",IDC_STATIC,8,7,222,90
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 267, 286
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Πληροφορίες για το Steganos LockNote..."
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,201,265,58,14
+    CONTROL         202,IDC_STATIC,"Static",SS_BITMAP,0,0,267,185
+    PUSHBUTTON      "&Επίσκεψη στον ιστότοπο...",IDC_VISIT_WEBSITE,7,265,91,14
+    EDITTEXT        IDC_COPYRIGHT,7,193,251,64,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PASSWORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 116
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        VERTGUIDE, 258
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 279
+        HORZGUIDE, 96
+        HORZGUIDE, 257
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&Αρχείο"
+    BEGIN
+        MENUITEM "Αποθήκευση &ως...",                 57604
+        MENUITEM SEPARATOR
+        MENUITEM "Αλλαγή &κωδικού...",          ID_FILE_CHANGEPASSWORD
+        MENUITEM SEPARATOR
+        MENUITEM "Έ&ξοδος",                       ID_APP_EXIT
+    END
+    POPUP "&Επεξεργασία"
+    BEGIN
+        MENUITEM "&Αναίρεση\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Α&ποκοπή\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "Α&ντιγραφή\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "Επι&κόλληση\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "Εύ&ρεση...\tCtrl+F",            ID_EDIT_FIND
+        MENUITEM "Εύρεση επό&μενου\tF3",              ID_EDIT_FINDNEXT
+        MENUITEM SEPARATOR
+        MENUITEM "Επιλογή ό&λων\tCtrl+A",         ID_EDIT_SELECT_ALL
+    END
+	POPUP "&Προβολή"
+    BEGIN
+        POPUP "&Γραμματοσειρά"
+		BEGIN
+			MENUITEM "Arial",					ID_FONT_ARIAL
+			MENUITEM "Courier New",				ID_FONT_COURIER_NEW
+			MENUITEM "Lucida Console",			ID_FONT_LUCIDA_CONSOLE  // CHECKED
+			MENUITEM "Tahoma",					ID_FONT_TAHOMA
+			MENUITEM "Verdana",					ID_FONT_VERDANA
+		END
+        POPUP "&Μέγεθος γραμμάτων"
+		BEGIN
+			MENUITEM "9",						ID_VIEW_FONTSIZE_9
+			MENUITEM "10",						ID_VIEW_FONTSIZE_10	//CHECKED
+			MENUITEM "12",						ID_VIEW_FONTSIZE_12
+			MENUITEM "14",						ID_VIEW_FONTSIZE_14
+		END
+    END
+    POPUP "&Βοήθεια"
+    BEGIN
+        MENUITEM "&Πληροφορίες για το Steganos LockNote",    ID_APP_ABOUT
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""atlres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST ""res\\\\locknote.exe.manifest""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "Steganos LockNote"
+    IDS_INVALID_PASSWORD    "Ο κωδικός που δώσατε δεν είναι έγκυρος!"
+    IDS_PASSWORD_CHANGED    "Ο νέος κωδικός θα ισχύσει αφότου κλείσετε το έγγραφο."
+    IDS_SAVE_CHANGES        "Θέλετε να αποθηκευτούν οι αλλαγές;"
+    IDS_CANT_CONVERT        "Το αρχείο '%s' δεν μπορεί να μετατραπεί και θα γίνει παράβλεψη της μετατροπής του.\n\nΜόνο αρχεία με κατάληξη .txt μπορούν να μετατραπούν."
+    IDS_ASK_CONVERT_FILES   "Αποθέσατε ένα ή περισσότερα αρχεία στο παρόν έγγραφο.\n\nΘέλετε να μετατρέψετε αυτά τα αρχεία;"
+    IDS_TEXT_IS_ENCRYPTED   "Δεν υπάρχει κείμενο στο εξαγόμενο έγγραφο.\nΤο έγγραφο δεν θα κρυπτογραφηθεί."
+    IDS_WELCOME             "Καλώς ήρθατε στο Steganos LockNote.\r\n\r\nΠληκτρολογήστε κάποιο κείμενο και κλείστε το Steganos LockNote όταν τελειώσετε. Ό,τι πληκτρολογήσατε θα κρυπτογραφηθεί χρησιμοποιώντας έναν κωδικό πρόσβασης, που θα δώσετε.\r\n\r\nΜπορείτε επίσης να αποθέσετε έγγραφα κειμένου στο Steganos LockNote ώστε να μετατραπούν σε κρυπτογραφημένα έγγραφα που αποκρυπτογραφούνται δίχως την ανάγκη ύπαρξης κάποιου εξωτερικού προγράμματος.\r\n\r\nΜπορείτε να ξεκινήσετε από εδώ αφαιρώντας όλο αυτό το κείμενο. Μπορείτε επίσης να καθαρίσετε αυτό το πεδίο κειμένου για να επαναφέρετε τον κωδικό πρόσβασης\r\n\r\nΜπορείτε να λάβετε περισσότερα τεχνάσματα από την ιστοσελίδα του Steganos LockNote:\r\n\r\nhttp://locknote.steganos.com\r\n"
+    IDS_PASSWORD            "Κωδικός:"
+    IDS_PASSWORD_REPEAT     "Επανάληψη κωδικού:"
+	IDS_FIND_NOT_FOUND		"Το '%s' δε βρέθηκε."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ENTER_PASSWORD      "Παρακαλώ εισάγετε τον κωδικό πρόσβασης που απαιτείται για το άνοιγμα αυτού του εγγράφου."
+    IDS_ENTER_NEW_PASSWORD  "Παρακαλώ επιλέξτε έναν νέο ασφαλή κωδικό πρόσβασης για την κρυπτογράφηση αυτού του εγγράφου."
+    IDS_PASSWORD_MISMATCH   "Οι κωδικοί που έχετε εισάγει δεν συμφωνούν."
+    IDS_PASSWORD_EMPTY      "Τα πεδία κωδικού πρόσβασης είναι κενά. Παρακαλώ εισάγετε έναν κωδικό πρόσβασης με μήκος τουλάχιστον ενός χαρακτήρα."
+    IDS_CONVERT_DONE        "%i αρχείο (α) έχουν μετατραπεί. Μπορείτε να βρείτε τα κρυπτογραφημένα έγγραφα, εκεί που βρίσκονται και τα αρχικά."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Εμφανίζει πληροφορίες προγράμματος, αριθμό έκδοσης και πνευματικά δικαιώματα\nΠληροφορίες"
+    ID_APP_EXIT             "Τερματίζει την εφαρμογή, ζητά να αποθηκεύσετε το έγγραφο\nΈξοδος"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_COPY            "Αντιγράφει την επιλογή και την τοποθετεί στο Πρόχειρο\nΑντιγραφή"
+    ID_EDIT_CUT             "Αποκόπτει την επιλογή και την τοποθετεί στο Πρόχειρο\nΑποκοπή"
+    ID_EDIT_FIND            "Βρίσκει το προσδιοριζόμενο κείμενο\nΕύρεση"
+    ID_EDIT_PASTE           "Εισάγει τα περιεχόμενα του Προχείου\nΕπικόλληση"
+    ID_EDIT_SELECT_ALL      "Επιλέγει όλο το έγγραφο\nΕπιλογή όλων"
+    ID_EDIT_UNDO            "Αναιρεί την τελευταία ενέργεια\nΑναίρεση"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_SELECTALL       "Επιλογή όλου του κειμένου\nΕπιλογή όλων"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COPYRIGHT           "Πνευματικά δικαιώματα © 2006-2011 Steganos GmbH\r\n\r\nΓραμμένο από:\r\nLeonard Ritter\r\nMichael Sadoni\r\nRobert Foertsch\r\nRιgis Barbier\r\n\r\nΜεταφράσεις:\r\nRιgis Barbier\r\nMatthijs Pinxteren\r\nHerbert Weustenenk\r\nPetros Kyladitis\r\n\r\nΤο Steganos® είναι σήμα κατατεθέν στην Ευρωπαϊκή Ένωση, στις Ηνωμένες Πολιτείες της Αμερικής, την Ελβετία και σε άλλες χώρες.\r\n\r\nΑυτό το πρόγραμμα είναι ελεύθερο λογισμικό, Μπορείτε να το αναδιανέμετε ή / και να το τροποποιήσετε υπό τους όρους της GNU General Public License όπως δημοσιεύτηκε από το Free Software Foundation, από την έκδοση 2 της άδειας, ή (κατ' επιλογήν σας) οποιαδήποτε μεταγενέστερη έκδοση.\r\n\r\nΑυτό το πρόγραμμα διανέμεται με την ελπίδα ότι θα είναι χρήσιμο, αλλά ΧΩΡΙΣ ΚΑΜΙΑ ΕΓΓΥΗΣΗ, χωρίς καν την υπονοούμενη εγγύηση ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ή ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΕΝΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ. Δείτε την GNU General Public License για περισσότερες λεπτομέρειες\r\n\r\nΘα πρέπει να έχετε λάβει ένα αντίγραφο της GNU General Public License μαζί με αυτό το πρόγραμμα. Εάν όχι, γράψτε προς το Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
+END
+
+#endif    // Greek resources
+/////////////////////////////////////////////////////////////////////////////
 
 
 
